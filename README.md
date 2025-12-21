@@ -1,6 +1,7 @@
 # 🩺 Online Health Record Management System
 
 A MERN Stack project to digitize and manage hospital patient records securely.
+
 <img width="1536" height="1024" alt="Thumbnail of MediCare" src="https://github.com/user-attachments/assets/298078e7-ea04-47dc-8cab-12c4bbde6364" />
 
 ## 🧠 Tech Stack
