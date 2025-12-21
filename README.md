@@ -2,7 +2,7 @@
 
 A MERN Stack project to digitize and manage hospital patient records securely.
 
-<img width="1536" height="1024" alt="Thumbnail of MediCare" src="https://github.com/user-attachments/assets/298078e7-ea04-47dc-8cab-12c4bbde6364" />
+<img width="1536" height="1024" alt="Thumbnail of MediCare GitHub" src="https://github.com/user-attachments/assets/e754fd47-f0cb-4009-a2cc-345fcef1d6c1" />
 
 ## 🧠 Tech Stack
 - React.js (Frontend)
