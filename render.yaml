@@ -1,0 +1,38 @@
+services:
+  # 1. Express Backend Web Service
+  - type: web
+    name: medicare-backend
+    runtime: node
+    plan: free
+    rootDir: MediCare/Backend(Server)
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5001
+      - key: MONGO_URI
+        sync: false # Set to your MongoDB Atlas connection string
+      - key: JWT_SECRET
+        generateValue: true # Generates secure random 32+ character key automatically
+      - key: JWT_EXPIRE
+        value: 30d
+      - key: CLIENT_URL
+        sync: false # Set to your deployed frontend URL (e.g. https://medicare-frontend.onrender.com)
+
+  # 2. React Vite Frontend Static Site
+  - type: web
+    name: medicare-frontend
+    runtime: static
+    rootDir: MediCare/Frontend(Client)
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false # Set to your backend API URL + /api (e.g. https://medicare-backend.onrender.com/api)
+
