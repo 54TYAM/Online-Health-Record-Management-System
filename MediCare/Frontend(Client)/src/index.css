@@ -2,19 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@layer base {
+  :root {
+    --bg-ivory: #F7F4EC;
+    --text-charcoal: #252B28;
+    --primary-forest: #173F35;
+    --accent-sage: #DCE8DE;
+    --border-warm: #E5DFD0;
+  }
 
-  color-scheme: light dark;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  html {
+    background-color: var(--bg-ivory);
+    color: var(--text-charcoal);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--bg-ivory);
+    color: var(--text-charcoal);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* High-contrast focus rings for accessibility */
+  :focus-visible {
+    outline: 2px solid #173F35;
+    outline-offset: 2px;
+  }
+
+  /* Subtle, restrained borders */
+  hr {
+    border-color: #E5DFD0;
+  }
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Editorial typography utilities */
+.font-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+  letter-spacing: -0.015em;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }

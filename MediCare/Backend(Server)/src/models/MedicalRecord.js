@@ -8,4 +8,7 @@ const MedicalRecordSchema = new Schema({
   files: [{ type: String }],
 }, { timestamps: true });
 
+// Compound index for efficient chronological timeline queries
+MedicalRecordSchema.index({ patientId: 1, createdAt: -1 });
+
 export default mongoose.model('MedicalRecord', MedicalRecordSchema);
