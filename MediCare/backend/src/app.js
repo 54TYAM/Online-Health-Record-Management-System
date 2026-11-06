@@ -15,13 +15,19 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+  'https://online-health-record-management-sys.vercel.app',
   ...(process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').map(o => o.trim()) : [])
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow non-browser requests (tools, curl, server-to-server) or matching allowed origins
-    if (!origin || allowedOrigins.includes(origin)) {
+    // Allow non-browser requests or matching allowed origins (including any vercel or render domains)
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.endsWith('.onrender.com')
+    ) {
       return callback(null, true);
     }
     return callback(new Error(`CORS policy blocked access for origin: ${origin}`));

@@ -608,7 +608,9 @@ describe('🔒 6. Double-Booking & Admin Safety Controls', () => {
       Doctor.findById = () => ({
         populate: () => Promise.resolve({
           _id: '507f1f77bcf86cd799439033',
-          userId: { _id: '507f1f77bcf86cd799439044', name: 'Dr. House', isBlocked: false }
+          userId: { _id: '507f1f77bcf86cd799439044', name: 'Dr. House', isBlocked: false },
+          availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+          availableTimeSlots: ['14:00']
         })
       });
 
