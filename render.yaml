@@ -4,7 +4,7 @@ services:
     name: medicare-backend
     runtime: node
     plan: free
-    rootDir: MediCare/Backend(Server)
+    rootDir: MediCare/backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -25,7 +25,7 @@ services:
   - type: web
     name: medicare-frontend
     runtime: static
-    rootDir: MediCare/Frontend(Client)
+    rootDir: MediCare/frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     routes:

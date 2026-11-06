@@ -57,7 +57,7 @@ A full-stack **MERN** application for digitising and managing hospital patient r
 ```
 Online-Health-Record-Management-System/
 ├── MediCare/
-│   ├── Backend(Server)/
+│   ├── backend/
 │   │   ├── src/
 │   │   │   ├── config/         # Database & environment configuration
 │   │   │   ├── controllers/    # Route handlers (auth, appointments, records, feedback, admin)
@@ -74,7 +74,7 @@ Online-Health-Record-Management-System/
 │   │   ├── .env.example        # Environment variable template
 │   │   └── package.json
 │   │
-│   └── Frontend(Client)/
+│   └── frontend/
 │       ├── src/
 │       │   ├── api/            # Axios instance with JWT interceptors
 │       │   ├── components/     # Navbar, AppLayout, CreateDoctorForm
@@ -111,7 +111,7 @@ cd Online-Health-Record-Management-System
 ### 2. Backend Setup
 
 ```bash
-cd MediCare/Backend(Server)
+cd MediCare/backend
 npm install
 ```
 
@@ -149,7 +149,7 @@ On first run, the server automatically seeds the database with:
 Open a **new terminal**:
 
 ```bash
-cd MediCare/Frontend(Client)
+cd MediCare/frontend
 npm install
 npm run dev
 ```
@@ -177,7 +177,7 @@ npm run dev
 ## 🧪 Running Tests
 
 ```bash
-cd MediCare/Backend(Server)
+cd MediCare/backend
 npm test
 ```
 
